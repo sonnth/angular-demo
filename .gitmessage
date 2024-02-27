@@ -1,0 +1,55 @@
+<type>: <summary>
+
+<Describe the motivation behind this change - explain WHY you are making this change. Wrap all lines
+at 100 characters.>
+
+Fixes #<issue number>
+
+# ─── Format: ─────────────────────────────────────────────────────────────────────────────────────┤
+# <header>
+# <BLANK LINE>
+# <body>
+# <BLANK LINE>
+# <footer>
+# ─────────────────────────────────────────────────────────────────────────────────────────────────┤
+# Allowed <type> values:
+# - feat (new feature for the user, not a new feature for build script)
+# - fix (bug fix for the user, not a fix to a build script)
+# - docs (changes to the documentation)
+# - style (formatting, missing semi colons, etc; no production code change)
+# - refactor (refactoring production code, eg. renaming a variable)
+# - test (adding missing tests, refactoring tests; no production code change)
+# - chore (updating grunt tasks etc; no production code change)
+# ─────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+
+# ────────────────────────────────────────── 100 chars ────────────────────────────────────────────┤
+
+
+# Example Commit Messages
+# =======================
+
+
+# ─── Example: Simple refactor ────────────────────────────────────────────────────────────────────┤
+# refactor(core): rename refreshDynamicEmbeddedViews to refreshEmbeddedViews
+#
+# Improve code readability. The original name no longer matches how the function is used.
+# ─────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+
+# ─── Example: Simple docs change ─────────────────────────────────────────────────────────────────┤
+# docs: clarify the service limitation in providers.md guide
+#
+# Fixes #36332
+# ─────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+
+# ─── Example: A bug fix ──────────────────────────────────────────────────────────────────────────┤
+# fix(ngcc): ensure lockfile is removed when `analyzeFn` fails
+#
+# Previously an error thrown in the `analyzeFn` would cause the ngcc process to exit immediately
+# without removing the lockfile, and potentially before the unlocker process had been successfully
+# spawned resulting in the lockfile being orphaned and left behind.
+#
+# Now we catch these errors and remove the lockfile as needed.
+# ─────────────────────────────────────────────────────────────────────────────────────────────────┤

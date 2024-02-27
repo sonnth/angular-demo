@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  angular-demo-frontend:
+    image: node:12.21.0-alpine
+    container_name: angular-demo-frontend
+    working_dir: /usr/src/app
+    user: "node"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - 4201:4200
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - CHOKIDAR_USEPOLLING=true
+    command: /bin/sh -c "yarn; yarn start --host 0.0.0.0"
+
+networks:
+  default:
+    external:
+      name: test-network
